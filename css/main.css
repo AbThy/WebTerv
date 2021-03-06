@@ -1,0 +1,45 @@
+/*  HTML5 szabvány elemek   */
+
+header
+{
+    padding: 30px;
+    padding-top: 17px;
+    text-align: center;
+}
+footer
+{
+    text-align: right;
+    padding-right: 3%;
+    font-size: 12px;
+}
+
+/*  Menü elemek   */
+
+nav
+{
+    padding-left: 6%;
+    padding-top: 15px;
+    position:-webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #5a4b6b;
+    overflow: hidden;
+}
+.navElem
+{
+    float: left;
+    text-align: center;
+    padding-left: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin: 4px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #b53a59;
+    background-color: #815aad;
+}
+.aktivFul
+{
+    text-decoration: none;
+    color: #d15e62;
+}
