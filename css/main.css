@@ -1,42 +1,53 @@
 /*  HTML5 szabvány elemek   */
+html
+{
+    font-family: 'Quicksand', sans-serif;
+}
 
 header
 {
-    padding: 30px;
+    padding: 26px;
     padding-top: 17px;
     text-align: center;
+    background-color: #5e6a85;
+    font-size: 30px;
 }
 footer
 {
     text-align: right;
+    padding-top: 5px;
     padding-right: 3%;
+    padding-bottom: 3px;
     font-size: 12px;
+    background-color: #5e6a85;
 }
 
 /*  Menü elemek   */
 
 nav
 {
-    padding-left: 6%;
-    padding-top: 15px;
     position:-webkit-sticky;
     position: sticky;
     top: 0;
     background-color: #5a4b6b;
     overflow: hidden;
+    font-size: 20px;
+    font-weight: 700;
 }
 .navElem
 {
     float: left;
     text-align: center;
-    padding-left: 10px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding: 4px 10px;
     margin: 4px;
-    font-size: 16px;
     text-decoration: none;
-    color: #b53a59;
-    background-color: #815aad;
+    color: #bdc274;
+    background-color: #7694c4;
+}
+
+.navElem:hover
+{
+    background-color: #68aee3;
 }
 .aktivFul
 {
