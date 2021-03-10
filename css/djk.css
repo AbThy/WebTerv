@@ -1,0 +1,13 @@
+#djTabla
+{
+    vertical-align: middle;
+    text-align: center;
+    margin: auto;
+    width: 800px;
+    background-color: gray;
+    border: 1px solid greenyellow;
+}
+#djTabla tr,th,td
+{
+    border: 1px solid greenyellow;
+}
