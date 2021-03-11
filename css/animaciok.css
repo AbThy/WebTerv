@@ -1,0 +1,22 @@
+/* CSS Animációk */
+@keyframes fadeIn
+{
+    from { opacity: 0%;}
+    to {opacity: 100%;}
+}
+
+aside
+{
+    animation-name: fadeIn;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+}
+
+h1, h2, h3, h4, p, table, caption
+{
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+}

@@ -48,7 +48,7 @@ aside
     color: aliceblue;;
     background-color: #585e69;
     height: 100%;
-    width: 7%;
+    width: 14%;
     top: 0;
     right: 0;
 }
@@ -90,21 +90,21 @@ nav
 
 .navElem:hover{
     color: #FF00FB;
+    transform: scale(0.98, 0.98);
 }
 
 .navElem:active{
     color: #E4FF00;
 }
 
-/*.aktivFul
+#cssValidalt
 {
-    text-decoration: none;*/
-    /*color: #d15e62;*/
-    /*color: #04C387;
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}
 
-}*/
-
-/*  Random használható */
+/*  Random használható, így az oldal elemei nem lógnak bele az <aside>-ba*/
 .sidebarigTart
 {
     width: 70%;
