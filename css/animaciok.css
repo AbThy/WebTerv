@@ -13,7 +13,7 @@ aside
     animation-direction: normal;
 }
 
-h1, h2, h3, h4, p, table, caption
+main
 {
     animation-name: fadeIn;
     animation-duration: 2s;
