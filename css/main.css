@@ -1,77 +1,15 @@
-/*  HTML5 szabvány elemek   */
-/*body{
-    background-image: url("fustocske.png");
-}
-*/
-html, body
-{
-    font-family: 'Quicksand', sans-serif;
-    font-size: 18px;
-    padding: 0px;
-    margin: 0px;
-}
-
-header
-{
-    padding: 10px;
-    /*padding-top: 5px;*/
-    text-align: center;
-    /*background-color: #5e6a85;*/
-    font-size: 30px;
-    color: lightgrey;
-    /*background-color: #A455C6;*/
-    /*background-image: linear-gradient(lightslategray, darkgray, slategrey);*/
-    /*background-image: linear-gradient(#4B3B8A, #55BBC4, slategrey);*/
-    background-image: url("proba2.png");
-    background-repeat: no-repeat;
-}
-
-footer
-{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: right;
-    padding-top: 5px;
-    padding-bottom: 3px;
-    font-size: 12px;
-    background-color: black;
-}
-footer p
-{
-    color: aliceblue;
-    padding-right: 12px;
-}
-aside
-{
-    position: absolute;
-    color: aliceblue;;
-    background-color: #585e69;
-    height: 100%;
-    width: 14%;
-    top: 0;
-    right: 0;
-}
-main
-{
-    position: fixed;
-    width: 100%;
-    padding-left: 20px;
-    height: 100%;
-}
-
-/*  Menü elemek   */
-
+/*  navbar   */
 nav
 {
     position:-webkit-sticky;
     position: sticky;
     top: 0;
-    background-color: #101041;
+    background-color: #fadf61;
     overflow: hidden;
     font-size: 20px;
     font-weight: 700;
-
+    padding: 10px;
+    z-index: 100; /* Az aside a nav mögé csúszik */
 }
 
 .navElem
@@ -81,10 +19,10 @@ nav
     text-align: center;
     padding: 4px 10px;
     margin: 4px;
+    text-shadow: 3px 3px 4px black;
+    box-shadow: 2px 2px 3px 2px #1c0080;
     text-decoration: none;
-    /*color: #bdc274;*/ /* ez nem vágom hol lenne*/
-    background-color: #4B3B8A;
-    /*background-color: #7694c4;*/
+    background-color: #562683;
     color: #00FF0F;
 }
 
@@ -93,19 +31,116 @@ nav
     transform: scale(0.98, 0.98);
 }
 
-.navElem:active{
-    color: #E4FF00;
+.aktivFul{
+    color: #a68700;
 }
 
+/*  --------------- */
+
+/*  tartalom    */
+main
+{
+    width: 100%;
+    height: 100%;
+    padding: 1px 14% 150px 30px; /*  <---- pontosan be van állítva hogy a footer és aside ne lógjon bele*/
+    background-image: url("img/fustocske.png");
+    background-color: #cfaa48;
+    color: #8a0606;
+    font-size: large;
+    font-weight: bold;
+}
+html, body
+{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    padding: 0px;
+    margin: 0px;
+}
+header
+{
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    font-size: 30px;
+    color: #ffd157;
+    background-image: url("img/proba2.png");
+    background-repeat: no-repeat;
+    width: 100%;
+}
+iframe
+{
+    padding-left: 20px;
+}
+/*  --------------- */
+
+/*  class   */
+.szoveg
+{
+    width: 80%;
+}
+.center
+{
+    padding: auto;
+}
+/*  --------------- */
+
+/*  footer  */
+footer
+{
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: right;
+    padding: 5px 0;
+    font-size: 12px;
+    background-color: #48753d;
+    z-index: 100; /* aside a footer mögé*/
+}
+footer p
+{
+    color: #adf38f;
+    padding-right: 12px;
+}
 #cssValidalt
 {
     float: left;
     margin-top: 20px;
     margin-left: 20px;
 }
-
-/*  Random használható, így az oldal elemei nem lógnak bele az <aside>-ba*/
-.sidebarigTart
+#soundCloud
 {
-    width: 70%;
+    float: left;
+    width: 30%;
+    padding-left: 70px;
+}
+/*  -------------   */
+
+/*  aside   */
+aside
+{
+    position: absolute;
+    color: aliceblue;;
+    background-color: #585e69;
+    height: 100%;
+    width: 14%;
+    right: 0;
+    border-radius: 42px 0px 0px 0px;
+    z-index: 99; /* Az aside a nav mögé csúszik */
+}
+aside iframe
+{
+    margin: 20px 0px 0px 5px;
+}
+#login
+{
+    width: 90%;
+    padding: 20px 0px 0px 5px;
+}
+/* Kis képernyős media-query átalakítás */
+@media only screen and (max-width: 800px)
+{
+    aside{opacity: 0%;}
+    header{font-size: 15px;}
+    .navElem{font-size: 10px;}
+    #soundCloud{opacity: 0%;}
 }

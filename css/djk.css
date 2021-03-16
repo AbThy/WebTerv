@@ -2,12 +2,28 @@
 {
     vertical-align: middle;
     text-align: center;
-    margin: auto;
+    margin: 0 auto;
+    border-collapse: collapse;
     width: 800px;
-    background-color: gray;
     border: 1px solid greenyellow;
 }
-#djTabla tr,th,td
-{
+caption{
+    color: #1c0080;
+}
+
+th, td {
+    vertical-align: middle;
+    text-align: center;
+    padding: 5px;
     border: 1px solid greenyellow;
+}
+
+th {
+    background-color: #2a56c6;
+    color: white;
+}
+
+td{
+    background-color: #1c0080;
+    color: #2ef3dc;
 }
