@@ -1,0 +1,6 @@
+#negyzet{
+    width: 163px;
+    height: 163px;
+    /*margin: 5px 0 0 5px;*/
+    transform: translate(25px, 25px) rotate(15deg);
+}

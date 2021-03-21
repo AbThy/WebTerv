@@ -9,6 +9,7 @@
 }
 caption{
     color: #1c0080;
+    margin: 5px 0;
 }
 
 th, td {
@@ -26,4 +27,17 @@ th {
 td{
     background-color: #1c0080;
     color: #2ef3dc;
+}
+
+/*----------*/
+
+aside p{
+    /*writing-mode: vertical-rl;*/
+    text-align: center;
+    margin: 5px 0;
+}
+
+.oszlopok
+{
+    column-count: 2;
 }
