@@ -22,11 +22,11 @@
         </header>
 
         <nav>
-            <a class="navElem" href="index.html">Főoldal</a>
-            <a class="navElem" href="kontrollerek.html">Kontrollerek</a>
-            <a class="navElem" href="djk.html">Disc Jockey-k</a>
-            <a class="navElem" href="filmek.html">Filmek</a>
-            <a class="navElem aktivFul" href="fesztival.html">Hazai fesztiválok</a>
+            <a class="navElem" href="index.php">Főoldal</a>
+            <a class="navElem" href="kontrollerek.php">Kontrollerek</a>
+            <a class="navElem" href="djk.php">Disc Jockey-k</a>
+            <a class="navElem" href="filmek.php">Filmek</a>
+            <a class="navElem aktivFul" href="fesztival.php">Hazai fesztiválok</a>
         </nav>
 
         <main>
@@ -82,6 +82,18 @@
                         <source src="css/sound/Punnany_Szabadon.mp3" type="audio/mpeg"/>
                     </audio>
                 </div>
+
+                <div>
+                    <h2>Neked mi a kedvenc fesztiválemléked Magyarországról?</h2>
+                    <p>Töltsd fel <i>te</i> is kedvenc képed!</p>
+                    <form method="POST" action="php/fesztivalkep.php" enctype="multipart/form-data">
+                        <input type="file" name="fesztKep" id="fesztivalKep">
+                        <input type="submit" value="Feltöltés!" name="feltolt">
+                    </form>
+
+                    <?php echo $v ?>
+                </div>
+
             </div>
         </main>
 

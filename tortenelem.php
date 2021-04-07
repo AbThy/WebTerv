@@ -22,11 +22,11 @@
         </header>
 
         <nav>
-            <a class="navElem" href="index.html">Főoldal</a>
-            <a class="navElem aktivFul" href="tortenelem.html">Történelem</a>
-            <a class="navElem" href="kontrollerek.html">Kontrollerek</a>
-            <a class="navElem" href="djk.html">Disc Jockey-k</a>
-            <a class="navElem" href="filmek.html">Filmek</a>
+            <a class="navElem" href="index.php">Főoldal</a>
+            <a class="navElem aktivFul" href="tortenelem.php">Történelem</a>
+            <a class="navElem" href="kontrollerek.php">Kontrollerek</a>
+            <a class="navElem" href="djk.php">Disc Jockey-k</a>
+            <a class="navElem" href="filmek.php">Filmek</a>
         </nav>
 
         <main>

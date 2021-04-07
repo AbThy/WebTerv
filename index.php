@@ -14,6 +14,7 @@
         <!-- Google Fonts API: betű importálás-->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+        <!--PHP-->
     </head>
 
     <body>
@@ -24,16 +25,16 @@
         </header>
 
         <nav>
-            <a class="navElem aktivFul" href="index.html">Főoldal</a>
-            <a class="navElem" href="kontrollerek.html">Kontrollerek</a>
-            <a class="navElem" href="djk.html">Disc Jockey-k</a>
-            <a class="navElem" href="filmek.html">Filmek</a>
-            <a class="navElem" href="fesztival.html">Hazai fesztiválok</a>
+            <a class="navElem aktivFul" href="index.php">Főoldal</a>
+            <a class="navElem" href="kontrollerek.php">Kontrollerek</a>
+            <a class="navElem" href="djk.php">Disc Jockey-k</a>
+            <a class="navElem" href="filmek.php">Filmek</a>
+            <a class="navElem" href="fesztival.php">Hazai fesztiválok</a>
         </nav>
 
         <main>
             <aside id="hf">
-                <form id="login" method="POST" autocomplete="on">
+                <form id="login" method="POST" action="php/bejelentkezes.php" autocomplete="on">
                     <fieldset>
                         <legend>Bejelentkezés</legend>
                         <input type="text" name="username" placeholder="Felhasználónév..." required/> <br/><br/>
@@ -60,12 +61,13 @@
                     <a class="wikipedialink" href="https://hu.wikipedia.org/wiki/Lemezlovas" style="text-align: right;">Forrás: Wikipédia</a>
                 </div>
 
-                <form id="reg" method="POST" autocomplete="on">
+                <form id="reg" method="POST" action="php/regisztralas.php" autocomplete="on">
                     <p>Regisztráció</p>
                     <fieldset>
                         <legend>Kötelező adatok</legend>
                         <label>Felhasználónév: <input type="text" name="username" placeholder="Felhasználónév..." required/></label><br/>
                         <label>Jelszó: <input type="password" name="passwd" placeholder="Jelszó..." required/></label><br/>
+                        <label>Jelszó újra: <input type="password" name="passwd1" placeholder="Jelszó..." required/></label><br/>
                         <input type="email" name="email" placeholder="e-mail cím" required/><br/>                       
                         <label for="jellemzoSelect">Hogyan jellemeznéd magad?</label><br/>
                         <select id="jellemzoSelect">

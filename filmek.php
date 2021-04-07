@@ -23,11 +23,11 @@
         </header>
 
         <nav>
-            <a class="navElem" href="index.html">Főoldal</a>
-            <a class="navElem" href="kontrollerek.html">Kontrollerek</a>
-            <a class="navElem" href="djk.html">Disc Jockey-k</a>
-            <a class="navElem aktivFul" href="filmek.html">Filmek</a>
-            <a class="navElem" href="fesztival.html">Hazai fesztiválok</a>
+            <a class="navElem" href="index.php">Főoldal</a>
+            <a class="navElem" href="kontrollerek.php">Kontrollerek</a>
+            <a class="navElem" href="djk.php">Disc Jockey-k</a>
+            <a class="navElem aktivFul" href="filmek.php">Filmek</a>
+            <a class="navElem" href="fesztival.php">Hazai fesztiválok</a>
         </nav>
 
         <main>
@@ -51,27 +51,44 @@
                     A problémát, ilyen keretek között most először, mutatja be a REZZ és Alison Wonderland megnyilvánulásaival is reklámozott
                     film, az <cite>Underplayed</cite> című alkotás.
                 </p>
-                <div class="center">
+                <div>
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/FHNiPw1c2WE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
+                <!--
                 <div >
                     <img id="nagyobb" src="css/img/szoveg.jpg" alt="szoveg" width="150" height="150"/>
                 </div>
+                --->
                 <br/>
                 <br/>
-                <div id="filmErtek">
-                    <form method="POST" autocomplete="off">
+                <div /*id="filmErtek"*/>
+                    <form method="POST" action="php/velemeny.php" autocomplete="off">
                         <textarea class="szovegblokk" name="ertekeles" rows="5" cols="100" maxlength="500" placeholder="Írd meg véleményed! Mit gondolsz az ilyen kezdeményezésekről? (max. 500 karakter!)"></textarea>
                         <br/>
                         <input style="margin-left: 650px;" type="submit"/>
                         <input type="reset"/>
                     </form>
                 </div>
-                <section>
-                    <p>
-                        <br style="margin: 300px;"/>
-                    </p>
-                </section>
+                <div> <!-- Vélemények betöltése -->
+                        <h2>Eddigi vélemények:</h2> <br/>
+                        <p>
+                            <?php
+                                $s = fopen("php/velemenyek.txt","r");
+                                if($s !== FALSE)
+                                {
+                                    $i = 1;
+                                    while (($sor = fgets($s)) !== FALSE)
+                                    {
+                                        echo $sor . "<br/>";
+                                    }
+                                }
+                                else
+                                {
+                                    echo "A kommentek betöltése sikertelen!";
+                                }
+                            ?>
+                        </p>
+                    </div>
             </div>
         </main>
 

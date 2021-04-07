@@ -124,7 +124,7 @@ video
 }
 #multiCol
 {
-    font-size: 12px;
+    font-size: 15px;
     column-count: 3;
     transform: scale(0.9,0.9);
 }
