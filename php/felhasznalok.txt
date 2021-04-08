@@ -1,0 +1,2 @@
+a:6:{s:3:"nev";s:12:"Felhasznalo1";s:6:"jelszo";s:7:"jelszo1";s:4:"mail";s:8:"11@11.11";s:6:"jelleg";s:2:"dj";s:7:"rejtett";b:0;s:8:"jellemzo";s:13:"A kakaót is!";}
+a:6:{s:3:"nev";s:12:"Felhasznalo2";s:6:"jelszo";s:7:"jelszo2";s:4:"mail";s:8:"11@11.11";s:6:"jelleg";s:7:"rajongo";s:7:"rejtett";b:1;s:8:"jellemzo";s:11:"A tejet is!";}

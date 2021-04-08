@@ -79,7 +79,7 @@
                                     $i = 1;
                                     while (($sor = fgets($s)) !== FALSE)
                                     {
-                                        echo $sor . "<br/>";
+                                        echo $sor;
                                     }
                                 }
                                 else

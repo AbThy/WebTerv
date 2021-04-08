@@ -38,7 +38,7 @@
                     <fieldset>
                         <legend>Bejelentkezés</legend>
                         <input type="text" name="username" placeholder="Felhasználónév..." required/> <br/><br/>
-                        <input type="password" name="passwd" placeholder="Jelszó..." required/> <br/><br/>
+                        <input type="password" name="pass" placeholder="Jelszó..." required/> <br/><br/>
                         <input type="submit" value="Bejelentkezés"/>
                         <input type="reset"/>
                         <p id="transzformalunk">Regisztráció a főoldal alján!</p>
@@ -65,12 +65,12 @@
                     <p>Regisztráció</p>
                     <fieldset>
                         <legend>Kötelező adatok</legend>
-                        <label>Felhasználónév: <input type="text" name="username" placeholder="Felhasználónév..." required/></label><br/>
+                        <label>Felhasználónév: <input type="text" name="usrname" placeholder="Felhasználónév..." required/></label><br/>
                         <label>Jelszó: <input type="password" name="passwd" placeholder="Jelszó..." required/></label><br/>
                         <label>Jelszó újra: <input type="password" name="passwd1" placeholder="Jelszó..." required/></label><br/>
                         <input type="email" name="email" placeholder="e-mail cím" required/><br/>                       
                         <label for="jellemzoSelect">Hogyan jellemeznéd magad?</label><br/>
-                        <select id="jellemzoSelect">
+                        <select id="jellemzoSelect" name="jellSelect">
                             <option value="dj">DJ</option>
                             <option value="tanulo">Tanuló DJ</option>
                             <option value="rajongo">Rajongó</option>
@@ -82,7 +82,7 @@
                     <fieldset>
                         <legend>Egyéb</legend>
                         <label for="jellemzoSzoveg">Leírás</label>
-                        <textarea  class="szovegblokk" id="jellemzoSzoveg" rows="10" cols="30" maxlength="300" placeholder="Írj valamit magadról! (max. 300 karakter!)"></textarea>
+                        <textarea  class="szovegblokk" id="jellemzoSzoveg" name="jellemzo" rows="10" cols="30" maxlength="300" placeholder="Írj valamit magadról! (max. 300 karakter!)"></textarea>
                         <input type="hidden" id="teszt" name="teszt" value="00"/>   
                     </fieldset>
                     <fieldset>
