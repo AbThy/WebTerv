@@ -35,6 +35,7 @@
                 break;
             }
         }
+        
         header("Location: ../index.php"); //átirányítás
     }
 

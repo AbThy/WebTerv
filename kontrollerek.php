@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php 
+    session_start();
+    include 'php/plusz_t.php';
+?>
 <!DOCTYPE html>
 
 <html lang="hu">
@@ -84,6 +87,11 @@
 
                     </p>
                 </div>
+                <?php
+                    echo '<div style="padding: 10px 50px; border-style: dotted; color: red;">';
+                    include 'php/honlapStatisztika.php';    
+                    echo '</div>';                    
+                ?>
                 <br/><br/><br/><br/>
             </div>
         </main>

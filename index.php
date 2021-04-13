@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php 
+    session_start();
+    include 'php/plusz_i.php';
+?>
 <!DOCTYPE html>
 
 <html lang="hu">
@@ -81,6 +84,9 @@
                         echo 'Újabb felhasználó regisztrálásához jelentkezz ki a navigációs bárban!';
                         echo '</div>';
                     }
+                    echo '<div style="padding: 10px 50px; border-style: dotted; color: red;">';
+                    include 'php/honlapStatisztika.php';    
+                    echo '</div>';
                 ?>
             </div>
 

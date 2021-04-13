@@ -1,7 +1,7 @@
 <form id="login" method="POST" action="php/bejelentkezes.php" autocomplete="on">
     <fieldset>
         <legend>Bejelentkezés</legend>
-        <input type="text" name="username" placeholder="Felhasználónév..." required/> <br/><br/>
+        <input type="text" name="username" placeholder="Felhasználónév..." required value="<?php if (isset($_POST['username'])) echo $_POST('username'); ?>"/> <br/><br/>
         <input type="password" name="pass" placeholder="Jelszó..." required/> <br/><br/>
         <input type="submit" name="bejelentkezes" value="Bejelentkezés"/>
         <input type="reset"/>

@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php 
+    session_start();
+    include 'php/plusz_t.php';
+?>
 <!DOCTYPE html>
 
 <html lang="hu">
@@ -67,12 +70,16 @@
                 <br/>
                 <br/>
                 <div /*id="filmErtek"*/>
-                    <form method="POST" action="velemeny.php" autocomplete="off">
-                        <textarea class="szovegblokk" name="ertekeles" rows="5" cols="100" maxlength="500" placeholder="Írd meg véleményed! Mit gondolsz az ilyen kezdeményezésekről? (max. 500 karakter!)"></textarea>
-                        <br/>
-                        <input style="margin-left: 650px;" type="submit"/>
-                        <input type="reset"/>
-                    </form>
+                    <?php
+                        if(isset($_SESSION["user"]) && $_SESSION["user"] !== null)
+                        {
+                            include 'velemeny_FORM.html';
+                        }
+                        else
+                        {
+                            echo '<p style="padding: 10px 100px; border: 1px white; border-style: dashed;">Vélemény írásához jelentkezz be!</p>';
+                        }
+                    ?>
                 </div>
                 <div> <!-- Vélemények betöltése -->
                         <h2>Eddigi vélemények:</h2> <br/>
@@ -95,6 +102,11 @@
                         </p>
                     </div>
             </div>
+            <?php
+                echo '<div style="padding: 10px 50px; border-style: dotted; color: red;">';
+                include 'php/honlapStatisztika.php';    
+                echo '</div>';                    
+            ?>
         </main>
 
         <footer>

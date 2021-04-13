@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php 
+    session_start();
+    include 'php/plusz_t.php';
+?>
 <!DOCTYPE html>
 
 <html lang="hu">
@@ -91,8 +94,12 @@
                         <input type="submit" value="Feltöltés!" name="feltolt">
                     </form>
                 </div>
-
             </div>
+            <?php
+                echo '<div style="padding: 10px 50px; border-style: dotted; color: red;">';
+                include 'php/honlapStatisztika.php';    
+                echo '</div>';                    
+            ?>
         </main>
 
         <footer>
