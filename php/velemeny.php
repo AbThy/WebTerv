@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $v = "";
 
     if(isset($_POST["ertekeles"]) && $_POST["ertekeles"] != "")
@@ -11,7 +12,7 @@
     function velemeny_mentes()
     {
         $f = fopen("velemenyek.txt","a");
-        if($file === FALSE)
+        if($f === FALSE)
         {
             die("HIBA: A vélemény mentése nem sikerült!");
         }

@@ -1,0 +1,29 @@
+<form id="reg" method="POST" action="php/regisztralas.php" autocomplete="on">
+    <p>Regisztráció</p>
+    <fieldset>
+        <legend>Kötelező adatok</legend>
+        <label>Felhasználónév: <input type="text" name="usrname" placeholder="Felhasználónév..." required/></label><br/>
+        <label>Jelszó: <input type="password" name="passwd" placeholder="Jelszó..." required/></label><br/>
+        <label>Jelszó újra: <input type="password" name="passwd1" placeholder="Jelszó..." required/></label><br/>
+        <input type="email" name="email" placeholder="e-mail cím" required/><br/>                       
+        <label for="jellemzoSelect">Hogyan jellemeznéd magad?</label><br/>
+        <select id="jellemzoSelect" name="jellSelect">
+            <option value="dj">DJ</option>
+            <option value="tanulo">Tanuló DJ</option>
+            <option value="rajongo">Rajongó</option>
+        </select>
+        <br/>
+        <input type="checkbox" name="rejtett" id="rejtettBox">
+        <label for="rejtettBox">Rejtett felhasználó?</label>
+    </fieldset>
+    <fieldset>
+        <legend>Egyéb</legend>
+        <label for="jellemzoSzoveg">Leírás</label>
+        <textarea  class="szovegblokk" id="jellemzoSzoveg" name="jellemzo" rows="10" cols="30" maxlength="300" placeholder="Írj valamit magadról! (max. 300 karakter!)"></textarea>
+        <input type="hidden" id="teszt" name="teszt" value="00"/>   
+    </fieldset>
+    <fieldset>
+        <input type="submit" value="Regisztráció" style="float: none;"/>
+        <input type="reset" style="float: none; margin-left: 10px;"/>
+    </fieldset>
+</form>

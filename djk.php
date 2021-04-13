@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 
 <html lang="hu">
@@ -28,15 +29,28 @@
             <a class="navElem aktivFul" href="djk.php">Disc Jockey-k</a>
             <a class="navElem" href="filmek.php">Filmek</a>
             <a class="navElem" href="fesztival.php">Hazai fesztiválok</a>
+            <?php
+                if(isset($_SESSION["user"]) && $_SESSION["user"] !== null)
+                {
+                    echo '<a class="navElem aktivFul" href="php/kijelentkezes.php">Kijelentkezés</a>';
+                }
+            ?>
         </nav>
 		
         <main>
             <aside>
-                <p><q>I never set out to be part of a genre, because I listen to all types of music.</q> <br/> - Skrillex </p><br/>
-                <p><q>When you catch other people with a sound like yours, that's when you know you did something.</q> <br/> - Zedd </p><br/>
-                <p><q>My studio is a laptop. Everybody I work with is the same. We make computer music, we're the laptop generation.</q> <br/> - David Guetta </p>
-
+                <?php
+                    if(isset($_SESSION["user"]) && $_SESSION["user"] !== null)
+                    {
+                        include "aside_djk.html";
+                    }
+                    else
+                    {
+                        include "be_FORM.html";
+                    }
+                ?>
             </aside>
+
             <div class="szoveg">
                 <h1>Mainstream</h1>
                 <h2>DJMAG Top100</h2>

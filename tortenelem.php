@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 
 <html lang="hu">
@@ -23,10 +24,16 @@
 
         <nav>
             <a class="navElem" href="index.php">Főoldal</a>
-            <a class="navElem aktivFul" href="tortenelem.php">Történelem</a>
             <a class="navElem" href="kontrollerek.php">Kontrollerek</a>
             <a class="navElem" href="djk.php">Disc Jockey-k</a>
             <a class="navElem" href="filmek.php">Filmek</a>
+            <a class="navElem" href="fesztival.php">Hazai fesztiválok</a>
+            <?php
+                if(isset($_SESSION["user"]) && $_SESSION["user"] !== null)
+                {
+                    echo '<a class="navElem aktivFul" href="php/kijelentkezes.php">Kijelentkezés</a>';
+                }
+            ?>
         </nav>
 
         <main>

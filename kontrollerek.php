@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 
 <html lang="hu">
@@ -28,11 +29,26 @@
             <a class="navElem" href="djk.php">Disc Jockey-k</a>
             <a class="navElem" href="filmek.php">Filmek</a>
             <a class="navElem" href="fesztival.php">Hazai fesztiválok</a>
+            <?php
+                if(isset($_SESSION["user"]) && $_SESSION["user"] !== null)
+                {
+                    echo '<a class="navElem aktivFul" href="php/kijelentkezes.php">Kijelentkezés</a>';
+                }
+            ?>
         </nav>
 
         <main>
             <aside>
-                <img id="negyzet" src="css/img/negyzet.png" alt="negyzet"/>
+            <?php
+                    if(isset($_SESSION["user"]) && $_SESSION["user"] !== null)
+                    {
+                        include "aside_kontroll.html";
+                    }
+                    else
+                    {
+                        include "be_FORM.html";
+                    }
+                ?>
             </aside>
             <div class="szoveg">
                 <h1>Egy lemezlovas eszközei</h1>
@@ -58,7 +74,7 @@
                 <div>
                     <h2>Modern keverők</h2>
                     <video width="480" autoplay loop muted>
-                        <source src="css/vid/pioneer.mp4" type="video/mp4"/>
+                        <source src="../css/vid/pioneer.mp4" type="video/mp4"/>
                     </video>
                     <p>
                         A modern piacot a klubok, fesztiválok és otthoni használat esetében is a <u>pioneer</u> eszközei vezetik. Magyarországon is ez a standard.

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 
 <html lang="hu">
@@ -28,22 +29,26 @@
             <a class="navElem" href="djk.php">Disc Jockey-k</a>
             <a class="navElem aktivFul" href="filmek.php">Filmek</a>
             <a class="navElem" href="fesztival.php">Hazai fesztiválok</a>
+            <?php
+                if(isset($_SESSION["user"]) && $_SESSION["user"] !== null)
+                {
+                    echo '<a class="navElem aktivFul" href="php/kijelentkezes.php">Kijelentkezés</a>';
+                }
+            ?>
         </nav>
 
         <main>
             <aside>
-                <blockquote cite="https://www.brainyquote.com/quotes/dj_snake_966453?src=t_dj">
-                    You never know: the next DJ Snake, the next Skrillex, the next big DJs might wait outside of the club. You gotta give back and listen to the next generation and show some love.
-
-                    DJ Snake
-                </blockquote>
-                <pre>
-                    FILM
-                       U
-                       S
-                      LIFE
-                       C
-                </pre>
+            <?php
+                    if(isset($_SESSION["user"]) && $_SESSION["user"] !== null)
+                    {
+                        include "aside_film.html";
+                    }
+                    else
+                    {
+                        include "be_FORM.html";
+                    }
+                ?>
             </aside>
             <div class="szoveg">
                 <h1>Szexizmus & DJ-k</h1>
@@ -62,7 +67,7 @@
                 <br/>
                 <br/>
                 <div /*id="filmErtek"*/>
-                    <form method="POST" action="php/velemeny.php" autocomplete="off">
+                    <form method="POST" action="velemeny.php" autocomplete="off">
                         <textarea class="szovegblokk" name="ertekeles" rows="5" cols="100" maxlength="500" placeholder="Írd meg véleményed! Mit gondolsz az ilyen kezdeményezésekről? (max. 500 karakter!)"></textarea>
                         <br/>
                         <input style="margin-left: 650px;" type="submit"/>
@@ -79,7 +84,7 @@
                                     $i = 1;
                                     while (($sor = fgets($s)) !== FALSE)
                                     {
-                                        echo $sor;
+                                        echo $sor . '<br/>';
                                     }
                                 }
                                 else

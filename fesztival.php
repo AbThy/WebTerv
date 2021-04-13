@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 
 <html lang="hu">
@@ -27,27 +28,26 @@
             <a class="navElem" href="djk.php">Disc Jockey-k</a>
             <a class="navElem" href="filmek.php">Filmek</a>
             <a class="navElem aktivFul" href="fesztival.php">Hazai fesztiválok</a>
+            <?php
+                if(isset($_SESSION["user"]) && $_SESSION["user"] !== null)
+                {
+                    echo '<a class="navElem aktivFul" href="php/kijelentkezes.php">Kijelentkezés</a>';
+                }
+            ?>
         </nav>
 
         <main>
             <aside>
-                <figure>
-                    <img src="css/img/chrissu.jpg" alt="Chris_SU" style="width:100%" />
-                    <figcaption>Chris.SU</figcaption>
-                </figure>
-                <figure>
-                    <img src="css/img/flower.jpg" alt="Dj_Flower" style="width:100%" />
-                    <figcaption>Dj Flower</figcaption>
-                </figure>
-                <figure>
-                    <img src="css/img/dublickep.jpg" alt="Dublic" style="width:100%" />
-                    <figcaption>Dublic fivérek</figcaption>
-                </figure>
-                <figure>
-                    <img src="css/img/puppetz.jpg" alt="Puppetz" style="width:100%" />
-                    <figcaption>Puppetz</figcaption>
-                </figure>
-
+            <?php
+                    if(isset($_SESSION["user"]) && $_SESSION["user"] !== null)
+                    {
+                        include "aside_feszt.html";
+                    }
+                    else
+                    {
+                        include "be_FORM.html";
+                    }
+                ?>
             </aside>
             <div class="szoveg">
                 <h1>COVID-19 és a magyar fesztiválok</h1>
@@ -86,12 +86,10 @@
                 <div>
                     <h2>Neked mi a kedvenc fesztiválemléked Magyarországról?</h2>
                     <p>Töltsd fel <i>te</i> is kedvenc képed!</p>
-                    <form method="POST" action="php/fesztivalkep.php" enctype="multipart/form-data">
+                    <form method="POST" action="fesztivalkep.php" enctype="multipart/form-data">
                         <input type="file" name="fesztKep" id="fesztivalKep">
                         <input type="submit" value="Feltöltés!" name="feltolt">
                     </form>
-
-                    <?php echo $v ?>
                 </div>
 
             </div>
