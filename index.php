@@ -38,6 +38,7 @@
                 if(isset($_SESSION["user"]) && $_SESSION["user"] !== null)
                 {
                     echo '<a class="navElem aktivFul" href="php/kijelentkezes.php">Kijelentkezés</a>';
+                    echo '<a class="navElem" href="statisztika.php">Honlap statisztika</a>';
                 }
             ?>
         </nav>
@@ -71,23 +72,39 @@
                         az általa képviselt illetve kedvelt zenei műfajokban, és többnyire saját hanghordozókészlettel is rendelkezik, tehát egyben zenei gyűjtőről is beszélhetünk. 
                     </p>
                     <a class="wikipedialink" href="https://hu.wikipedia.org/wiki/Lemezlovas" style="text-align: right;">Forrás: Wikipédia</a>
+                
                 </div>
-
-                <?php
-                    if(!(isset($_SESSION["user"]) && $_SESSION["user"] !== null))
-                    {
-                        include "reg_FORM.html";
-                    }
-                    else
-                    {
-                        echo '<div style="margin: 100px 20px">';
-                        echo 'Újabb felhasználó regisztrálásához jelentkezz ki a navigációs bárban!';
-                        echo '</div>';
-                    }
-                    echo '<div style="padding: 10px 50px; border-style: dotted; color: red;">';
-                    include 'php/honlapStatisztika.php';    
-                    echo '</div>';
-                ?>
+                    <form id="reg" method="POST" action="php/regisztralas.php" autocomplete="on">
+                    <p>Regisztráció</p>
+                    <fieldset>
+                        <legend>Kötelező adatok</legend>
+                        <label>Felhasználónév: <input type="text" name="usrname" placeholder="Felhasználónév..." value="<?php if(isset($_POST["usrname"])) echo $_POST["usrname"]; ?>" required/></label><br/>
+                        <label>Jelszó: <input type="password" name="passwd" placeholder="Jelszó..." required/></label><br/>
+                        <label>Jelszó újra: <input type="password" name="passwd1" placeholder="Jelszó..." required/></label><br/>
+                        <input type="email" name="email" placeholder="e-mail cím" required/><br/>                       
+                        <label for="jellemzoSelect">Hogyan jellemeznéd magad?</label><br/>
+                        <select id="jellemzoSelect" name="jellSelect">
+                            <option value="dj">DJ</option>
+                            <option value="tanulo">Tanuló DJ</option>
+                            <option value="rajongo">Rajongó</option>
+                        </select>
+                        <br/>
+                        <input type="checkbox" name="rejtett" id="rejtettBox">
+                        <label for="rejtettBox">Rejtett felhasználó?</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Egyéb</legend>
+                        <label for="jellemzoSzoveg">Leírás</label>
+                        <textarea  class="szovegblokk" id="jellemzoSzoveg" name="jellemzo" rows="10" cols="30" maxlength="300" placeholder="Írj valamit magadról! (max. 300 karakter!)"></textarea>
+                        <input type="hidden" id="teszt" name="teszt" value="00"/>   
+                    </fieldset>
+                    <fieldset>
+                        <input type="submit" value="Regisztráció" style="float: none;"/>
+                        <input type="reset" style="float: none; margin-left: 10px;"/>
+                    </fieldset>
+                </form>
+                
+                
             </div>
 
 

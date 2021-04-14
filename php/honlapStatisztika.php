@@ -16,5 +16,6 @@
     fclose($tobbi);
 
     $ossz = $i + $t;
-    echo 'A főaldal megnyitásainak száma az összes oldal megnyitásához képest '.round($i / ($ossz / 100)).'%, ameddig az összes többi oldal az összes megnyitás '.round($t / ($ossz / 100)).'%-a.';
+    echo 'A főaldal megnyitásainak száma az összes oldal megnyitásához képest '.round($i / ($ossz / 100)).'%, ameddig az összes többi oldal ennek '.round($t / ($ossz / 100)).'%-a.';
+    echo '<br/>Összes oldanyítás: '.$ossz;
 ?>

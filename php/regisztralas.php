@@ -3,36 +3,34 @@
     $egyezes = FALSE;
     $felhasznalo_temp;
 
-    if(isset($_POST["usrname"]) && isset($_POST["passwd"]) && isset($_POST["passwd1"]) && isset($_POST["email"]))
+    if(isset($_POST["usrname"]) && isset($_POST["passwd"]) && isset($_POST["passwd1"]) && isset($_POST["email"])) // "hamisan" kitöltött mezők
     {
-        if($_POST["usrname"] != "" && $_POST["passwd"] != "" && $_POST["passwd1"] != "" && $_POST["email"] != "")
+        if($_POST["usrname"] != "" && $_POST["passwd"] != "" && $_POST["passwd1"] != "" && $_POST["email"] != "") // "hamisan" kitöltött mezők
         {
-            if($_POST["passwd"] == $_POST["passwd1"])
+            if($_POST["passwd"] == $_POST["passwd1"]) // Jelszó és ellenőrző jelszó egyezésének ellenőrzése
             {
                 foglalt_e();
-                if($egyezes !== TRUE)
+                if($egyezes !== TRUE) // Foglalt felhasználónév ellenőrzése --> [foglalt_e()]
                 {
-                    felhasznalo_mentes();
-                }
-                else
-                {   
-                    echo "A megadott felhasználónév már foglalt!";
-                }
-            }
-            else
-            {
-                echo "A jelszavak nem egyeznek!";
-            }
-        }
-        else
-        {
-            echo "Üres mezők!";
-        }
-    }
-    else
-    {
-        echo "Minden mező kitöltése kötelező! - ";
-    }
+                    if(strlen($_POST["passwd"]) >= 6) //Jelszó hosszának ellenőrzése
+                    {
+                        if(!str_contains($_POST["usrname"],"\""))
+                        {
+                            if(!str_contains($_POST["usrname"],"\\"))
+                            {
+                                $at = explode("@",$_POST["email"]);
+                                if(count(explode(".",$at[1])) <= 2)
+                                {
+                                    felhasznalo_mentes();
+                                }
+                                else{redirect("Az email címben nem állhat 1-nél több pont a @ jel után!");}
+                            }else{redirect("A felhasználónév nem tartalmazhat \\ karaktert!");}
+                        }else{redirect("A felhasználónév nem tartalmazhat \" karaktert!");}
+                    }else{redirect("A jelszónak legalább 6 karakter hosszúnak kell lennie!");}
+                }else{redirect("A megadott felhasználónév már foglalt!");}
+            }else{redirect("A jelszavak nem egyeznek!");}
+        }else{redirect("Üres mezők!");}
+    }else{redirect("Minden mező kitöltése kötelező!");}
 
     function foglalt_e()
     {
@@ -66,5 +64,12 @@
         fwrite($f, serialize($temp) . "\n");
         fclose($f);
         echo "A regisztráció sikeres volt " . $temp["nev"] . " névvel!";
+    }
+
+    function redirect($uzenet)
+    {
+        echo "<br/>".$uzenet;
+        header("refresh:6;url=../index.php");
+        echo "<br/>Visszaírányítunk a főoldalra 6mp-en belül!";
     }
 ?>

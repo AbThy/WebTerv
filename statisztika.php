@@ -1,12 +1,15 @@
-<?php 
+<?php
     session_start();
-    include 'php/plusz_t.php';
+    if(!isset($_SESSION["user"]) || $_SESSION["user"] === null)
+    {
+        header("Location: index.php");
+    }
 ?>
 <!DOCTYPE html>
 
 <html lang="hu">
     <head>
-        <title>DJP: Filmek</title>
+        <title>DJP: Főoldal</title>
         <meta name="author" content="Csapó Krisztina & Szigethy Ábrahám András"/>
         <meta charset="UTF-8"/>
         <!-- CSS -->
@@ -18,19 +21,21 @@
         <!-- Google Fonts API: betű importálás-->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+        <!--PHP-->
     </head>
 
     <body>
+        <!--<div id="overlay">Köszöntünk az oldalon!</div>-->
         <header>
             <h1>Disc Jockey Projekt</h1>
-            <h2>Filmek a témában</h2>
+            <h2>Főoldal</h2>
         </header>
 
         <nav>
-            <a class="navElem" href="index.php">Főoldal</a>
+            <a class="navElem aktivFul" href="index.php">Főoldal</a>
             <a class="navElem" href="kontrollerek.php">Kontrollerek</a>
             <a class="navElem" href="djk.php">Disc Jockey-k</a>
-            <a class="navElem aktivFul" href="filmek.php">Filmek</a>
+            <a class="navElem" href="filmek.php">Filmek</a>
             <a class="navElem" href="fesztival.php">Hazai fesztiválok</a>
             <?php
                 if(isset($_SESSION["user"]) && $_SESSION["user"] !== null)
@@ -42,11 +47,13 @@
         </nav>
 
         <main>
-            <aside>
-            <?php
+            <aside id="hf">
+                <?php
                     if(isset($_SESSION["user"]) && $_SESSION["user"] !== null)
                     {
-                        include "aside_film.html";
+                        echo '<div style="margin: 20px">';
+                        echo 'Szia ' . $_SESSION["user"]["nev"] . '!';
+                        echo '</div>';
                     }
                     else
                     {
@@ -55,54 +62,15 @@
                 ?>
             </aside>
             <div class="szoveg">
-                <h1>Szexizmus & DJ-k</h1>
-                <p>Mint mindenhol máshol, a szórakoztatóiparban, fesztiválokon és klubokban is fontos téma lett a férfi-női egyenjogúság.
-                    A problémát, ilyen keretek között most először, mutatja be a REZZ és Alison Wonderland megnyilvánulásaival is reklámozott
-                    film, az <cite>Underplayed</cite> című alkotás.
-                </p>
-                <div>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/FHNiPw1c2WE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <!--
-                <div >
-                    <img id="nagyobb" src="css/img/szoveg.jpg" alt="szoveg" width="150" height="150"/>
-                </div>
-                --->
-                <br/>
-                <br/>
-                <div /*id="filmErtek"*/>
+                <p style="margin: 42px; text-align: center;">A honlapstatisztika csak regisztrált tagoknak elérhető!</p>
+                <div style="padding: 20px 50px; margin-top: 100px; margin-bottom: 420px; text-align: center; border-style: dotted; color: red;">
                     <?php
-                        if(isset($_SESSION["user"]) && $_SESSION["user"] !== null)
-                        {
-                            include 'velemeny_FORM.html';
-                        }
-                        else
-                        {
-                            echo '<p style="padding: 10px 100px; border: 1px white; border-style: dashed;">Vélemény írásához jelentkezz be!</p>';
-                        }
+                        include 'php/honlapStatisztika.php';    
                     ?>
                 </div>
-                <div> <!-- Vélemények betöltése -->
-                        <h2>Eddigi vélemények:</h2> <br/>
-                        <p>
-                            <?php
-                                $s = fopen("php/velemenyek.txt","r");
-                                if($s !== FALSE)
-                                {
-                                    $i = 1;
-                                    while (($sor = fgets($s)) !== FALSE)
-                                    {
-                                        echo $sor . '<br/>';
-                                    }
-                                }
-                                else
-                                {
-                                    echo "A kommentek betöltése sikertelen!";
-                                }
-                            ?>
-                        </p>
-                    </div>
             </div>
+
+
         </main>
 
         <footer>

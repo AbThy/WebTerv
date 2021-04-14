@@ -36,6 +36,7 @@
                 if(isset($_SESSION["user"]) && $_SESSION["user"] !== null)
                 {
                     echo '<a class="navElem aktivFul" href="php/kijelentkezes.php">Kijelentkezés</a>';
+                    echo '<a class="navElem" href="statisztika.php">Honlap statisztika</a>';
                 }
             ?>
         </nav>
@@ -140,11 +141,6 @@
                     </ul>
                 </div>
             </div>
-            <?php
-                echo '<div style="padding: 10px 50px; border-style: dotted; color: red;">';
-                include 'php/honlapStatisztika.php';    
-                echo '</div>';                    
-            ?>
         </main>
 
         <footer>

@@ -35,6 +35,7 @@
                 if(isset($_SESSION["user"]) && $_SESSION["user"] !== null)
                 {
                     echo '<a class="navElem aktivFul" href="php/kijelentkezes.php">Kijelentkezés</a>';
+                    echo '<a class="navElem" href="statisztika.php">Honlap statisztika</a>';
                 }
             ?>
         </nav>
@@ -89,17 +90,12 @@
                 <div>
                     <h2>Neked mi a kedvenc fesztiválemléked Magyarországról?</h2>
                     <p>Töltsd fel <i>te</i> is kedvenc képed!</p>
-                    <form method="POST" action="fesztivalkep.php" enctype="multipart/form-data">
+                    <form action="php/fesztivalkep.php" method="POST" enctype="multipart/form-data">
                         <input type="file" name="fesztKep" id="fesztivalKep">
-                        <input type="submit" value="Feltöltés!" name="feltolt">
+                        <input type="submit" name="feltolt" value="Feltöltés!">
                     </form>
                 </div>
             </div>
-            <?php
-                echo '<div style="padding: 10px 50px; border-style: dotted; color: red;">';
-                include 'php/honlapStatisztika.php';    
-                echo '</div>';                    
-            ?>
         </main>
 
         <footer>
