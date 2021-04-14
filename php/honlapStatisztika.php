@@ -16,6 +16,8 @@
     fclose($tobbi);
 
     $ossz = $i + $t;
-    echo 'A főaldal megnyitásainak száma az összes oldal megnyitásához képest '.round($i / ($ossz / 100)).'%, ameddig az összes többi oldal ennek '.round($t / ($ossz / 100)).'%-a.';
-    echo '<br/>Összes oldanyítás: '.$ossz;
+    echo 'A főaldal megnyitásainak száma az összes oldalénak '.round($i / ($ossz / 100)).'%-át teszi ki, az összes többi oldalé a '.round($t / ($ossz / 100)).'%-a.';
+    echo '<br/>Összes oldalnyítás: '.$ossz;
+    echo '<br/><br/><br/>Amit magadról írtál: <i>"'.$_SESSION["user"]["jellemzo"]."</i>\"";
+    echo '<br/><br/>Leírásod így <u>'.strlen($_SESSION["user"]["jellemzo"])."</u> karakter hosszú.";
 ?>

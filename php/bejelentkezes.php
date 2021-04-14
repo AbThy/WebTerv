@@ -1,28 +1,31 @@
 <?php
     session_start(); //menetkövetés
+    $fajl;
     //$felhasznalo = "";
     //$jelszo = "";
-    $uzenet="juj^^";
-    if(!isset($_POST["username"]) || trim($_POST["username"]) === ""
-        || !isset($_POST["pass"]) || trim($_POST["pass"]) === "") {
-        $uzenet = "<strong>Hiba:</strong> Minden mező kitöltése kötelező!";
+    if(!isset($_POST["username"]) || trim($_POST["username"]) === "" || !isset($_POST["pass"]) || trim($_POST["pass"]) === "") 
+    {
+        echo "<strong>Hiba:</strong> Minden mező kitöltése kötelező!<br/>Visszalépés a főoldalra...";
+        header("refresh:6;url=../index.php");
     } 
     else 
     {
-        $uzenet = "Sikertelen belépés! A belépési adatok nem megfelelők!";
-        // alapból azt feltételezzük, hogy a bejelentkezés sikertelen
-
-
-        /*---------------Eddigi felhasznalok------------------*/
-        $fajl = fopen("felhasznalok.txt","r");
-
-        if($fajl === FALSE){
-            die("\nHIBA: a mentett felhasználók betöltése sikertelen!");
+        try
+        {
+            $fajl = fopen("felhasznalok.txt","r");
+            if($fajl === FALSE)
+            {
+                throw new Exception();
+            }
+        }
+        catch(Exception $e)
+        {
+            echo "A mentett felhasználók betöltése sikertelen!<br/>Visszalépés a főoldalra...";
+            header("refresh:6;url=../index.php");
+            die();
         }
 
-
-        /* Kicsit átalakítottam a bejelentkezést */
-
+        $be = FALSE;
         $felhasznalo;
         $sor;
         while (($sor = fgets($fajl)) !== FALSE)
@@ -30,13 +33,17 @@
             $felhasznalo = unserialize($sor); //visszaalakítás
             if ($felhasznalo["nev"] === $_POST["username"] && $felhasznalo["jelszo"] === $_POST["pass"]) 
             {
-                $uzenet = "Sikeres belépés! :)";
-                $_SESSION["user"] = $felhasznalo;           
-                break;
+                echo "Sikeres belépés!";
+                $_SESSION["user"] = $felhasznalo;      
+                header("refresh:1;url=../index.php");
+                $be = TRUE;
             }
         }
-        
-        header("Location: ../index.php"); //átirányítás
+        if(!$be)
+        {
+            echo "Hibás felhasználónév vagy jelszó!<br/>Visszalépés a főoldalra...";
+            header("refresh:6;url=../index.php");  
+        }
     }
 
         /*  EZ A RÉGI BEJELENTKEZÉS

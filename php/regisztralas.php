@@ -9,7 +9,14 @@
         {
             if($_POST["passwd"] == $_POST["passwd1"]) // Jelszó és ellenőrző jelszó egyezésének ellenőrzése
             {
-                foglalt_e();
+                try
+                {
+                    foglalt_e();
+                }
+                catch(Exception $e)
+                {
+                    redirect("Hiba történt a regisztráció során!<br/><br/>Ha találsz egy informatikust mutasd meg neki ezt:<br/>".$e);
+                }
                 if($egyezes !== TRUE) // Foglalt felhasználónév ellenőrzése --> [foglalt_e()]
                 {
                     if(strlen($_POST["passwd"]) >= 6) //Jelszó hosszának ellenőrzése
@@ -21,7 +28,14 @@
                                 $at = explode("@",$_POST["email"]);
                                 if(count(explode(".",$at[1])) <= 2)
                                 {
-                                    felhasznalo_mentes();
+                                    try
+                                    {
+                                        felhasznalo_mentes();
+                                    }
+                                    catch(Exception $e)
+                                    {
+                                        redirect("Fájlkezelési hiba történt a regisztráció során!<br/><br/>Ha találsz egy informatikust mutasd meg neki ezt:<br/>".$e);
+                                    }
                                 }
                                 else{redirect("Az email címben nem állhat 1-nél több pont a @ jel után!");}
                             }else{redirect("A felhasználónév nem tartalmazhat \\ karaktert!");}
@@ -37,11 +51,11 @@
         global $egyezes;
         global $felhasznalo_temp;
         $string_temp;
-
+        
         $fajl = fopen("felhasznalok.txt","r");
         if($fajl === FALSE)
         {
-            die("\nHIBA: a mentett felhasználók betöltése sikertelen!");
+            throw new Exception("HIBA a megnyitáskor: felhasznalok.txt");
         }
         while(($string_temp = fgets($fajl)) !== FALSE)
         {
@@ -60,10 +74,15 @@
     {
         $b = isset($_POST["rejtett"]);
         $temp = ["nev" => $_POST["usrname"], "jelszo" => $_POST["passwd"], "mail" => $_POST["email"], "jelleg" => $_POST["jellSelect"], "rejtett" => $b, "jellemzo" => $_POST["jellemzo"]];
+
         $f = fopen("felhasznalok.txt","a");
+        if($f === FALSE)
+        {
+            throw new Exception("HIBA a megnyitáskor: felhasznalok.txt");
+        }
         fwrite($f, serialize($temp) . "\n");
         fclose($f);
-        echo "A regisztráció sikeres volt " . $temp["nev"] . " névvel!";
+        redirect("A regisztráció sikeres volt " . $temp["nev"] . " névvel!");
     }
 
     function redirect($uzenet)
