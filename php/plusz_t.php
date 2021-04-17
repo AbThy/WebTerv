@@ -1,5 +1,5 @@
 <?php
-    $n;
+    $n="";
 
     $t = fopen("php/tobbiStat.txt", "r");
     if($t !== FALSE)

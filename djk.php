@@ -144,9 +144,9 @@
         </main>
 
         <footer>
-            <a href="http://jigsaw.w3.org/css-validator" id="cssValidalt">
+            <a href="https://jigsaw.w3.org/css-validator/" id="cssValidalt">
                 <img style="border:0;width:88px;height:31px"
-                    src="http://jigsaw.w3.org/css-validator/images/vcss"
+                    src="https://jigsaw.w3.org/css-validator/images/vcss"
                      alt="Érvényes CSS!"/>
             </a>
             <section id="soundCloud">

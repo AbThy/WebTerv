@@ -1,5 +1,5 @@
 <?php
-    $n;
+    $n="";
 
     $i = fopen("php/indexStat.txt", "r");
     if($i !== FALSE)

@@ -48,6 +48,7 @@ if (isset($_FILES["fesztKep"])) {
     } else {
         echo "<strong>Juj!</strong> A fájl kiterjesztése nem megfelelő! Amiket szeretünk: jpg, jpeg, png <3 <br/>";
     }
+    header("refresh:4;url=../index.php");
 }
 
 ?>

@@ -12,6 +12,9 @@
         <!-- CSS -->
         <link rel="stylesheet" href="css/main.css"/>
         <link rel="stylesheet" href="css/animaciok.css"/>
+        <style> /* CSS betöltése külön fájlból */
+            <?php include 'css/galeria.css';?>
+        </style>
         <!--Böngésző ikon-->
         <link rel="icon" href="css/img/logo.png"/>
         <!-- Google Fonts API: betű importálás-->
@@ -90,18 +93,21 @@
                 <div>
                     <h2>Neked mi a kedvenc fesztiválemléked Magyarországról?</h2>
                     <p>Töltsd fel <i>te</i> is kedvenc képed!</p>
-                    <form action="php/fesztivalkep.php" method="POST" enctype="multipart/form-data">
+                    <form action="php/fesztivalkep.php" method="GET" enctype="multipart/form-data">
                         <input type="file" name="fesztKep" id="fesztivalKep">
                         <input type="submit" name="feltolt" value="Feltöltés!">
                     </form>
                 </div>
             </div>
+            <div style="margin-bottom: 150px">
+                <?php include_once "php/kepek.php"; ?>
+            </div>
         </main>
 
         <footer>
-            <a href="http://jigsaw.w3.org/css-validator" id="cssValidalt">
+            <a href="https://jigsaw.w3.org/css-validator" id="cssValidalt">
                 <img style="border:0;width:88px;height:31px"
-                    src="http://jigsaw.w3.org/css-validator/images/vcss"
+                    src="https://jigsaw.w3.org/css-validator/images/vcss"
                      alt="Érvényes CSS!" />
             </a>
             <section id="soundCloud">

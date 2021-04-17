@@ -16,7 +16,7 @@
         {
             die("HIBA: A vélemény mentése nem sikerült!");
         }
-        fwrite($f, date("Y.m.d.") . " - " . $GLOBALS["v"] ."\n\n");
+        fwrite($f, date("Y.m.d.") . "\n" .  $_SESSION["user"]["nev"] . " - " . $GLOBALS["v"] ."\n\n");
         fclose($f);
     }
 ?>

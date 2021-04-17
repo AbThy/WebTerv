@@ -1,7 +1,7 @@
 <?php
     session_start();
     $egyezes = FALSE;
-    $felhasznalo_temp;
+    $felhasznalo_temp="";
 
     if(isset($_POST["usrname"]) && isset($_POST["passwd"]) && isset($_POST["passwd1"]) && isset($_POST["email"])) // "hamisan" kitöltött mezők
     {
@@ -46,12 +46,15 @@
         }else{redirect("Üres mezők!");}
     }else{redirect("Minden mező kitöltése kötelező!");}
 
-    function foglalt_e()
+/**
+ * @throws Exception
+ * hibát dob, ha a megnyitás sikertelen
+ */
+function foglalt_e()
     {
         global $egyezes;
         global $felhasznalo_temp;
-        $string_temp;
-        
+
         $fajl = fopen("felhasznalok.txt","r");
         if($fajl === FALSE)
         {
@@ -70,7 +73,11 @@
         fclose($fajl);
     }
 
-    function felhasznalo_mentes()
+/**
+ * @throws Exception
+ * hibát dob, ha a megnyitás sikertelen
+ */
+function felhasznalo_mentes()
     {
         $b = isset($_POST["rejtett"]);
         $temp = ["nev" => $_POST["usrname"], "jelszo" => $_POST["passwd"], "mail" => $_POST["email"], "jelleg" => $_POST["jellSelect"], "rejtett" => $b, "jellemzo" => $_POST["jellemzo"]];

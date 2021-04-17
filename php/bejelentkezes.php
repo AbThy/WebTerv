@@ -1,9 +1,10 @@
 <?php
     session_start(); //menetkövetés
-    $fajl;
+    $fajl = "";
     //$felhasznalo = "";
     //$jelszo = "";
-    if(!isset($_POST["username"]) || trim($_POST["username"]) === "" || !isset($_POST["pass"]) || trim($_POST["pass"]) === "") 
+    if(!isset($_POST["username"]) || trim($_POST["username"]) === ""
+        || !isset($_POST["pass"]) || trim($_POST["pass"]) === "")
     {
         echo "<strong>Hiba:</strong> Minden mező kitöltése kötelező!<br/>Visszalépés a főoldalra...";
         header("refresh:6;url=../index.php");
@@ -26,8 +27,8 @@
         }
 
         $be = FALSE;
-        $felhasznalo;
-        $sor;
+        $felhasznalo = "";
+        $sor = "";
         while (($sor = fgets($fajl)) !== FALSE)
         {
             $felhasznalo = unserialize($sor); //visszaalakítás

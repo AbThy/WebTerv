@@ -65,7 +65,7 @@
                     az előadáshoz használt eszközökön és híres "disc jockeyk"-on át egészen a témában alkotott filmekig: megpróbáljuk bejárni a témát,
                     remélve, hogy a laikus szemek és a témához értő érdeklődők is találnak valami számukra élvezhetőt.
                 </p>
-                <div style="border-style: ridge; padding: 0px 5px 20px 5px;">
+                <div style="border-style: ridge; padding: 0 5px 20px 5px;">
                     <h2>Ki/mi is az a <mark>DJ</mark>?</h2>
                     <p> A <mark>lemezlovas</mark> vagy <mark>disc jockey</mark> (IPA: [ˈdɪsk ˌdʒɒki], röviden DJ, IPA: [ˈdiː ˌdʒeɪ]) a köznyelvben olyan könnyűzenével foglalkozó személy, 
                         aki folyamatos zenét szolgáltat egy zenés-táncos rendezvény alkalmából a közönségnek. A DJ jellemzője, hogy széles körű ismeretekkel bír 
@@ -81,7 +81,7 @@
                         <label>Felhasználónév: <input type="text" name="usrname" placeholder="Felhasználónév..." value="<?php if(isset($_POST["usrname"])) echo $_POST["usrname"]; ?>" required/></label><br/>
                         <label>Jelszó: <input type="password" name="passwd" placeholder="Jelszó..." required/></label><br/>
                         <label>Jelszó újra: <input type="password" name="passwd1" placeholder="Jelszó..." required/></label><br/>
-                        <input type="email" name="email" placeholder="e-mail cím" required/><br/>                       
+                        <label><input type="email" name="email" placeholder="e-mail cím" required/></label><br/>
                         <label for="jellemzoSelect">Hogyan jellemeznéd magad?</label><br/>
                         <select id="jellemzoSelect" name="jellSelect">
                             <option value="dj">DJ</option>
@@ -103,17 +103,13 @@
                         <input type="reset" style="float: none; margin-left: 10px;"/>
                     </fieldset>
                 </form>
-                
-                
             </div>
-
-
         </main>
 
         <footer>
-            <a href="http://jigsaw.w3.org/css-validator" id="cssValidalt">
+            <a href="https://jigsaw.w3.org/css-validator" id="cssValidalt">
                 <img style="border:0;width:88px;height:31px"
-                    src="http://jigsaw.w3.org/css-validator/images/vcss"
+                    src="https://jigsaw.w3.org/css-validator/images/vcss"
                      alt="Érvényes CSS!" />
             </a>
             <section id="soundCloud">

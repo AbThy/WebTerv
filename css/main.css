@@ -64,13 +64,13 @@ html, body
 {
     font-family: 'Quicksand', sans-serif;
     font-size: 18px;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     overflow-x: hidden;
 }
 header
 {
-    padding: 10px 0px 10px 0px;
+    padding: 10px 0 10px 0;
     text-align: center;
     font-size: 30px;
     color: #ffd157;
@@ -86,7 +86,7 @@ video
 {
     float: right;
     padding-left: 30px;
-    border-radius: 70px 0px 0px 70px;
+    border-radius: 70px 0 0 70px;
 }
 .bal
 {
@@ -206,7 +206,7 @@ input[type="reset"]
 }
 aside iframe
 {
-    margin: 20px 0px 0px 5px;
+    margin: 20px 0 0 5px;
 }
 aside img
 {
@@ -226,13 +226,13 @@ aside
     height: 100%;
     width: 14%;
     right: 0;
-    border-radius: 42px 0px 0px 42px;
+    border-radius: 42px 0 0 42px;
     z-index: 99; /* Az aside a nav mögé csúszik */
 }
 #login
 {
     width: 90%;
-    padding: 20px 0px 0px 5px;
+    padding: 20px 0 0 5px;
 }
 
 .szovegblokk
@@ -246,10 +246,10 @@ aside
 /* Kis képernyős media-query átalakítás */
 @media only screen and (max-width: 1000px)
 {
-    aside{opacity: 0%;}
+    aside{opacity: 0;}
     header{font-size: 15px;}
     .navElem{font-size: 10px;}
-    #soundCloud{opacity: 0%;}
+    #soundCloud{opacity: 0;}
 }
 
 /*nyomtatási stíluslap*/

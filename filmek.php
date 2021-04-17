@@ -78,7 +78,7 @@
                         }
                         else
                         {
-                            echo '<p style="padding: 10px 100px; border: 1px white; border-style: dashed;">Vélemény írásához jelentkezz be!</p>';
+                            echo '<p style="padding: 10px 100px; border: dashed 1px white;">Vélemény írásához jelentkezz be!</p>';
                         }
                     ?>
                 </div>
@@ -101,14 +101,14 @@
                                 }
                             ?>
                         </p>
-                    </div>
+                </div>
             </div>
         </main>
 
         <footer>
-            <a href="http://jigsaw.w3.org/css-validator" id="cssValidalt">
+            <a href="https://jigsaw.w3.org/css-validator" id="cssValidalt">
                 <img style="border:0;width:88px;height:31px"
-                    src="http://jigsaw.w3.org/css-validator/images/vcss"
+                    src="https://jigsaw.w3.org/css-validator/images/vcss"
                      alt="Érvényes CSS!" />
             </a>
             <section id="soundCloud">

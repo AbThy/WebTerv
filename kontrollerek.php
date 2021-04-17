@@ -78,7 +78,7 @@
                 <div>
                     <h2>Modern keverők</h2>
                     <video width="480" autoplay loop muted>
-                        <source src="../css/vid/pioneer.mp4" type="video/mp4"/>
+                        <source src="css/vid/pioneer.mp4" type="video/mp4"/>
                     </video>
                     <p>
                         A modern piacot a klubok, fesztiválok és otthoni használat esetében is a <u>pioneer</u> eszközei vezetik. Magyarországon is ez a standard.
@@ -93,9 +93,9 @@
         </main>
 
         <footer>
-            <a href="http://jigsaw.w3.org/css-validator" id="cssValidalt">
+            <a href="https://jigsaw.w3.org/css-validator" id="cssValidalt">
                 <img style="border:0;width:88px;height:31px"
-                    src="http://jigsaw.w3.org/css-validator/images/vcss"
+                    src="https://jigsaw.w3.org/css-validator/images/vcss"
                      alt="Érvényes CSS!" />
             </a>
             <section id="soundCloud">
