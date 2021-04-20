@@ -32,7 +32,7 @@ if (isset($_FILES["fesztKep"])) {
             if ($_FILES["fesztKep"]["size"] <= 31457280) {
                 $cel_utvonal = "feltoltottKepekMappaja/" . $_FILES["fesztKep"]["name"];
                 if (file_exists($cel_utvonal)) {
-                    echo "<strong>Juj!</strong> A régebbi fájlt felülírjuk! <br/>";
+                    $cel_utvonal = "feltoltottKepekMappaja/" . '0' . $_FILES["fesztKep"]["name"];
                 }
                 if (move_uploaded_file($_FILES["fesztKep"]["tmp_name"], $cel_utvonal)) {
                     echo "A fájl sikeresen átmozgatásra került! Már épségben van! ^^ :D <br/>";
@@ -40,7 +40,7 @@ if (isset($_FILES["fesztKep"])) {
                     echo "<strong>Juj!</strong> Hiba történt a fájl átmozgatása során! :( <br/>";
                 }
             } else {
-                echo "<strong>Juj!</strong> A fájl mérete túl nagy, de az élmény még nagyobb lehetett! <br/>";
+                echo "<strong>Juj!</strong> A fájl mérete túl nagy, de az élmény még nagyobb lehetett! Próbálkozz másik képpel.<br/>";
             }
         } else {
             echo "<strong>Juj!</strong> A fájlfeltöltés nem sikerült! :(<br/>";
@@ -48,7 +48,6 @@ if (isset($_FILES["fesztKep"])) {
     } else {
         echo "<strong>Juj!</strong> A fájl kiterjesztése nem megfelelő! Amiket szeretünk: jpg, jpeg, png <3 <br/>";
     }
-    header("refresh:4;url=../index.php");
 }
-
+header("refresh:4;url=../fesztival.php");
 ?>

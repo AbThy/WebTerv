@@ -93,7 +93,7 @@
                 <div>
                     <h2>Neked mi a kedvenc fesztiválemléked Magyarországról?</h2>
                     <p>Töltsd fel <i>te</i> is kedvenc képed!</p>
-                    <form action="php/fesztivalkep.php" method="GET" enctype="multipart/form-data">
+                    <form action="php/fesztivalkep.php" method="POST" enctype="multipart/form-data">
                         <input type="file" name="fesztKep" id="fesztivalKep">
                         <input type="submit" name="feltolt" value="Feltöltés!">
                     </form>

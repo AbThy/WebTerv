@@ -234,11 +234,10 @@ aside
     width: 90%;
     padding: 20px 0 0 5px;
 }
-
 .szovegblokk
 {
     border: 5px solid #6b6a7a;
-    border-radius: 3px;
+    border-radius: 3px; 
     color: #700270;
     margin-bottom: 10px;
 }

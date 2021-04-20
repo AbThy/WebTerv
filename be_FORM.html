@@ -1,12 +1,12 @@
 <form id="login" method="POST" action="php/bejelentkezes.php" autocomplete="on">
     <fieldset>
         <legend>Bejelentkezés</legend>
-        <label>
-            <input type="text" name="username" placeholder="Felhasználónév..." required /> <br/><br/>
-            <input type="password" name="pass" placeholder="Jelszó..." required/> <br/><br/>
+            <label for="be_usr">Felhasználónév</label>
+            <input type="text" name="username" id="be_usr" placeholder="Felhasználónév..." required /> <br/><br/>
+            <label for="be_pass">Jelszó</label>
+            <input type="password" name="pass" id="be_pass" placeholder="Jelszó..." required/> <br/><br/>
             <input type="submit" name="bejelentkezes" value="Bejelentkezés"/>
             <input type="reset"/>
-        </label>
         <p id="transzformalunk">Regisztráció a főoldal alján!</p>
     </fieldset>
 </form>
